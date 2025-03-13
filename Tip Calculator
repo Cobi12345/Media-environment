@@ -1,0 +1,40 @@
+var bill
+
+function setup() {
+  createCanvas(800, 400);
+
+tip = createInput("Enter your tip")
+tip.position(100, 150)
+tip.size(150,50)
+
+bill = createInput("Enter your bill")
+bill.position(100, 100)
+bill.size(150,50)
+
+//basic button
+button = createButton('Calculate')  
+button.position(100, 50)
+button.size(100, 50)  
+  //when pressed, run a function
+button.mousePressed(function(){tipCalc()});  
+   
+Erase = createButton('Erase')  
+Erase.position(100, 205)
+Erase.size(100, 50)  
+  //when pressed, run a function
+Erase.mousePressed(function(){tipErase()});
+fill(255, 255, 255) 
+rect(350,50,100,50)
+}
+
+function tipCalc()
+{
+fill(0,0,0)
+tipAmt = bill.value() * tip.value() * .01
+text(tipAmt,350,50,100,50)
+}
+function tipErase()
+{
+fill(255, 255, 255) 
+rect(350,50,100,50)
+}
