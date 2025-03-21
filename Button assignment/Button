@@ -1,0 +1,50 @@
+ var bgColor = 220
+var sizeX = 30
+var sizeY = 30
+function setup() {
+  createCanvas(500, 400)
+  background(hgColor);
+  //setup redbutton
+  let redButton = createButton('Red')
+  redButton.size (100, 50)
+  redButton.position(10,10)
+  redButton.style('backgrond:red');
+  redButton.mousePressed(changeRed);
+  
+ // setup button blue
+  let bluebutton;
+  blueButton = create('Blue');
+  blueButton.size (100, 50);
+  bluebutton.position(10,70)
+  blueButton. style('background : blue');
+  blueButton. mousePressed(changeBue)
+  
+}
+ //setup eraser 
+ let eraseButton;
+  eraseButton = createButton('Erase');
+eraseButton.size (100, 50);
+eraserbutton.position(10,130)
+  eraserButton. style('background : white');
+  eraserButton. mousePressed(changeErase)
+
+
+//setup reset
+let resetButton;
+  resetButton = createButton('Erase');
+ restButton.size (100, 50);
+  resetButton. style('background : bgcolor');
+  resetButton. mousePressed(changeReset)
+
+  
+function changeRed(){
+  fill('Red')
+}
+
+function changeBlue(){
+fill('Blue')
+}
+function changeClear(){
+fill('bgcolor')
+background('bgcolor')
+}
