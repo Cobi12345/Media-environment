@@ -1,0 +1,27 @@
+var words = ["I","love", "making", "board", "games"];
+var colors = [
+[255,0,0],
+[255,128,151],
+[0,51,102],
+[255,255,51],
+[102,0,51]]
+function setup() {
+  createCanvas(800, 300);
+textAlign(CENTER, CENTER);
+  frameRate(2)
+}
+
+function draw() {
+  
+
+var currentIndex = (frameCount-1) % words.length;
+var currentWord = words[currentIndex];
+var currentColor = colors[currentIndex];
+  
+  background(currentColor);
+fill(255)
+  
+textSize(45)
+text(currentWord, width/2, height/2)
+
+}
