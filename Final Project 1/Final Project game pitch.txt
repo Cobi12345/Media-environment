@@ -1,0 +1,12 @@
+Final Project game pitch
+
+- Describe what your game is
+
+My game is a Basket game where players must catch all the fruits that fall from the sky in the box to gain points 
+
+- Explain the control of your game
+The controls of this game would be very simple only needing the player to move left to right using the mouse to control the basket
+- Explain the game play
+The player controls the basket using the mouse using left to right to try and catch all the fruits
+- Explain the win/lose condition
+The goal is to catch as many fruits in the basket as possible as to not let any hit the ground or you lose
