@@ -1,0 +1,147 @@
+var osc;
+
+function setup() {
+  createCanvas(1000, 400);
+  osc = new p5.Oscillator();
+  osc.setType('sine');
+}
+ 
+function draw() {
+  background(220);
+
+
+  var whiteW = width/19
+    // keys half as long as screen
+  var whiteH = height/2
+    // standard ratio of piano key widths 
+  var blackW = whiteW*7/12
+    // standard ratio of piano key lengths
+  var blackH = whiteH*2/3
+    // corner rounding
+  var round = 9
+  //white keys
+    //make fourteen keys
+  for (var i = 0; i < 14; i = i + 1){
+    fill(255, 255, 255)
+    /* rect parameters in order: topcorner X, topcorner Y, width, height, topL round, topR round, bottomL round, bottomR round */
+    rect((width/10+i*whiteW), height/4, whiteW, whiteH, 0, 0, round, round)
+  }
+  //black keys two sets of 2
+  for (var j = 0; j < 2; j = j + 1){
+    fill(0, 0, 0)
+    rect(whiteW*2.5+j*whiteW, height/4, blackW, blackH, 0, 0, round, round)
+    rect(whiteW*9.5+j*whiteW, height/4, blackW, blackH, 0, 0, round, round) 
+  }
+  //black keys set of 3
+  for (var k = 0; k < 3; k = k + 1){
+  fill(0, 0, 0)
+  rect(whiteW*5.5+k*whiteW, height/4, blackW, blackH, 0, 0, round, round)
+  rect(whiteW*12.5+k*whiteW, height/4, blackW, blackH, 0, 0, round, round)
+ 
+  }
+  //c1
+   if(keyIsDown(81)){
+  fill(139,0,0)
+    osc.start();
+    osc.freq(261.6256);
+    osc.amp(1000, 0.05);
+    ellipse(125, 275, 30, 30)
+}
+//csharp
+  if (keyIsDown(50)) {
+    osc.start();
+    osc.freq(277.1826);
+    osc.amp(1000, 0.05);
+    ellipse(143, 200, 30, 30)
+    fill(139,0,0)
+  //d  
+ if (keyIsDown(87))
+    osc.start();
+    osc.freq(293.6648);
+    osc.amp(1000, 0.05);
+    ellipse(178, 250, 30, 30)
+    fill(139,0,0)  
+  //dsharp
+     if (keyIsDown(51))
+    osc.start();
+    osc.freq(311.1270);
+    osc.amp(1000, 0.05);
+    ellipse(196, 184, 30, 30)
+    fill(139,0,0)  
+  //E
+    if(keyIsDown(69))
+    osc.start();
+    osc.freq(329.6276);
+    osc.amp(1000, 0.05);
+    ellipse(231, 249, 30, 30)
+    fill(139,0,0) 
+    //F
+    if(keyIsDown(52))
+    osc.start();
+    osc.freq(349.2282);
+    osc.amp(1000, 0.05);
+    ellipse(280, 252, 30, 30)
+    fill(139,0,0) 
+    //Fsharp
+     if(keyIsDown(82))
+    osc.start();
+    osc.freq(369.9944);
+    osc.amp(1000, 0.05);
+    ellipse(302, 169, 30, 30)
+    fill(139,0,0)
+   // G
+    if(keyIsDown(53))
+    osc.start();
+    osc.freq(391.9954);
+    osc.amp(1000, 0.05);
+    ellipse(331, 259, 30, 30)
+    fill(139,0,0)
+   //Gsharp 
+     if(keyIsDown(84))
+    osc.start();
+    osc.freq(415.3047);
+    osc.amp(1000, 0.05);
+    ellipse(355, 164, 30, 30)
+    fill(139,0,0)
+//a
+  if(keyIsDown(89))
+    osc.start();
+    osc.freq(440.0000);
+    osc.amp(1000, 0.05);
+    ellipse(385, 251, 30, 30)
+    fill(139,0,0)
+  // Asharp 
+    if(keyIsDown(55))
+    osc.start();
+    osc.freq(466.1638);
+    osc.amp(1000, 0.05);
+    ellipse(409, 173, 30, 30)
+    fill(139,0,0)
+    //B
+    if(keyIsDown(85))
+    osc.start();
+    osc.freq(493.8833);
+    osc.amp(1000, 0.05);
+    ellipse(442, 240, 30, 30)
+    fill(139,0,0)
+    //c1
+    if(keyIsDown(56))
+    osc.start();
+    osc.freq(523.2511);
+    osc.amp(1000, 0.05);
+    ellipse(494, 244, 30, 30)
+    fill(139,0,0)
+    //csharp
+   if(keyIsDown(73))
+    osc.start();
+    osc.freq(554.3653);
+    osc.amp(1000, 0.05);
+    ellipse(514, 158, 30, 30)
+    fill(139,0,0) 
+  }
+ 
+function keyReleased()
+  {
+  osc.amp(0, 0.05);
+  }
+}

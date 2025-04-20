@@ -1,0 +1,34 @@
+let points = 0
+
+function setup() {
+  createCanvas(700, 400);
+  // noCursor()
+  object = createVector(random(30, width - 30), -30)
+  vel = createVector(0, 3)
+}
+
+function draw() {
+  background(220);
+  player = createVector(mouseX, height - 30)
+  
+  text(points, 20, 20)
+  
+  //object
+  object.add(vel)
+  ellipse(object.x, object.y, 20)
+  
+    //player
+  rectMode(CENTER)
+  rect(player.x, player.y, 40)
+  
+  d = player.dist(object)
+  if (d < 25){
+    object = createVector(random(30, width - 30), -30)
+    vel.y+=0.2
+    points++
+  } else if (object.y > height){
+    noLoop()
+    text("you lose", width/2, height/2)
+  }
+  
+}
